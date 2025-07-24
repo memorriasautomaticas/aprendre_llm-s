@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard: Guía Definitiva de Prompts para ChatGPT</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .accordion-button {
+            transition: background-color 0.2s ease;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+            padding: 0 24px;
+        }
+        .accordion-content.open {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 16px 24px;
+        }
+        .prompt-good {
+            border-left: 4px solid #34A853; /* Google Green */
+        }
+        .prompt-bad {
+            border-left: 4px solid #EA4335; /* Google Red */
+        }
+        .google-blue { color: #4285F4; }
+        .google-green { color: #34A853; }
+        .google-yellow { color: #FBBC05; }
+        .google-red { color: #EA4335; }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Guía Definitiva de Prompts para ChatGPT</h1>
+            <p class="text-lg text-gray-600">Un dashboard interactivo para crear prompts efectivos.</p>
+        </header>
+
+        <main class="space-y-8">
+            
+            <!-- Good vs Bad Prompts Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 text-center">Prompts Buenos vs. Malos</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Technology Inquiry -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center"><span class="google-blue mr-2">🔌</span> Tecnología</h3>
+                        <div class="prompt-bad p-4 rounded-lg mb-4">
+                            <p class="font-bold text-gray-700">Malo:</p>
+                            <p class="text-gray-600">"Háblame de los coches eléctricos."</p>
+                        </div>
+                        <div class="prompt-good p-4 rounded-lg">
+                            <p class="font-bold text-gray-700">Bueno:</p>
+                            <p class="text-gray-600">"Compara los avances en la tecnología de coches eléctricos en los últimos dos años."</p>
+                        </div>
+                    </div>
+                    <!-- Historical Analysis -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center"><span class="google-yellow mr-2">📜</span> Análisis Histórico</h3>
+                        <div class="prompt-bad p-4 rounded-lg mb-4">
+                            <p class="font-bold text-gray-700">Malo:</p>
+                            <p class="text-gray-600">"Háblame de la historia."</p>
+                        </div>
+                        <div class="prompt-good p-4 rounded-lg">
+                            <p class="font-bold text-gray-700">Bueno:</p>
+                            <p class="text-gray-600">"¿Podrías analizar el impacto económico del Tratado de Versalles después de la Primera Guerra Mundial?"</p>
+                        </div>
+                    </div>
+                    <!-- Business Insights -->
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center"><span class="google-green mr-2">📈</span> Perspectivas de Negocio</h3>
+                        <div class="prompt-bad p-4 rounded-lg mb-4">
+                            <p class="font-bold text-gray-700">Malo:</p>
+                            <p class="text-gray-600">"¿Cómo aumento las ventas?"</p>
+                        </div>
+                        <div class="prompt-good p-4 rounded-lg">
+                            <p class="font-bold text-gray-700">Bueno:</p>
+                            <p class="text-gray-600">"¿Qué algunas estrategias de entrada al mercado probadas para un nuevo producto tecnológico en un mercado competitivo?"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10 Best Practices Section -->
+            <section class="card">
+                 <h2 class="text-2xl font-bold mb-6 text-center">10 Mejores Prácticas al Usar ChatGPT</h2>
+                 <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div class="flex items-start"><span class="google-blue text-2xl mr-3">1.</span> <div><span class="font-bold">Sé claro y específico:</span> Comunica tus preguntas de forma clara.</div></div>
+                    <div class="flex items-start"><span class="google-red text-2xl mr-3">2.</span> <div><span class="font-bold">Proporciona contexto:</span> Dale al modelo información relevante sobre el tema.</div></div>
+                    <div class="flex items-start"><span class="google-yellow text-2xl mr-3">3.</span> <div><span class="font-bold">Usa ejemplos completos:</span> Enmarca tus prompts para asegurar una interpretación precisa.</div></div>
+                    <div class="flex items-start"><span class="google-blue text-2xl mr-3">4.</span> <div><span class="font-bold">Empieza con instrucciones:</span> Dile al modelo cómo quieres que se comporte.</div></div>
+                    <div class="flex items-start"><span class="google-green text-2xl mr-3">5.</span> <div><span class="font-bold">Experimenta e itera:</span> Prueba con diferentes frases o palabras.</div></div>
+                    <div class="flex items-start"><span class="google-red text-2xl mr-3">6.</span> <div><span class="font-bold">Usa prompts previos:</span> Haz referencia a las respuestas anteriores del modelo.</div></div>
+                    <div class="flex items-start"><span class="google-yellow text-2xl mr-3">7.</span> <div><span class="font-bold">Limita la longitud de la respuesta:</span> Pide que la respuesta se centre en puntos clave específicos.</div></div>
+                    <div class="flex items-start"><span class="google-blue text-2xl mr-3">8.</span> <div><span class="font-bold">Usa instrucciones explícitas:</span> Establece claramente tus instrucciones en el prompt.</div></div>
+                    <div class="flex items-start"><span class="google-green text-2xl mr-3">9.</span> <div><span class="font-bold">Verifica y comprueba los hechos:</span> Asegúrate de que la información sea correcta.</div></div>
+                    <div class="flex items-start"><span class="google-red text-2xl mr-3">10.</span> <div><span class="font-bold">Revisa y refina:</span> Ajusta tus prompts para obtener respuestas más precisas.</div></div>
+                 </div>
+            </section>
+
+            <!-- Prompt Categories Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 text-center">Ejemplos de Prompts por Categoría</h2>
+                <div id="accordion-container" class="space-y-3">
+                    <!-- Accordion items will be generated by JS -->
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Dashboard creado para visualizar la "Guía Definitiva de Prompts para ChatGPT".</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionContainer = document.getElementById('accordion-container');
+
+            const promptData = [
+                {
+                    category: "Marketing",
+                    icon: "📢",
+                    prompts: [
+                        "Crea una publicación de LinkedIn de menos de 150 palabras usando [insertar copia aquí].",
+                        "Crea un carrusel de Instagram para [producto/servicio] con [número] diapositivas que cubran [tema].",
+                        "Escribe un texto de anuncio persuasivo para Google Ads para una campaña dirigida a [público objetivo].",
+                        "Escribe una secuencia de correo electrónico de [número] partes para [propósito] usando información de [fuente].",
+                        "Escribe [número] mensajes de CTA sobre [insertar material aquí].",
+                        "Escribe una publicación de blog sobre [tema] para mi [nombre de la empresa] usando [información].",
+                        "Escribe mi boletín semanal, incluyendo [número] encabezados.",
+                        "Escribe una publicación de blog de [número] palabras sobre [tema].",
+                        "Convierte los datos a continuación en un caso de estudio: (1) Desafío (2) Solución (3) Resultado.",
+                        "Crea una página de destino para un descuento por tiempo limitado en [producto o servicio]."
+                    ]
+                },
+                {
+                    category: "Creación de Contenido",
+                    icon: "✍️",
+                    prompts: [
+                        "Escribe una introducción para una publicación de blog sobre [tema].",
+                        "Desarrolla un guion paso a paso para un tutorial de YouTube sobre [tema].",
+                        "Crea un calendario de contenido para [número] publicaciones de blog, incluyendo [palabras clave].",
+                        "Genera [número] ideas de publicaciones de blog para un blog sobre [tema].",
+                        "Genera una lista de 10 preguntas provocadoras para una publicación de blog sobre [tema].",
+                        "Escribe una publicación de blog de [número] palabras sobre [tema].",
+                        "Desarrolla un 'whopper' sobre [tema]. Mantenlo por debajo de [número] palabras.",
+                        "Escribe una publicación de blog de [número] palabras sobre [tema].",
+                        "Reescribe esta lista con viñetas para que comience con la misma parte del discurso.",
+                        "Describe este párrafo como una lista con viñetas."
+                    ]
+                },
+                {
+                    category: "Servicio al Cliente",
+                    icon: "👥",
+                    prompts: [
+                        "Desarrolla una guía paso a paso para manejar [quejas de clientes].",
+                        "Escribe un guion de servicio al cliente para manejar [consultas de facturación].",
+                        "Escribe una respuesta de servicio al cliente para ayudar a un cliente con [problema].",
+                        "Crea una encuesta para medir la satisfacción del cliente después de [interacción].",
+                        "Escribe un chat en vivo que ayude a los clientes a solucionar [problema].",
+                        "Escribe una política de devoluciones para [producto/servicio].",
+                        "Escribe [número] preguntas frecuentes que aborden preguntas y preocupaciones comunes usando [datos].",
+                        "Crea una plantilla para el seguimiento por correo electrónico del cliente después de [interacción].",
+                        "Crea una plantilla para el acercamiento proactivo al cliente para [nombre de la empresa] en [industria].",
+                        "Desarrolla un análisis competitivo para nuestro [producto/servicio], identificando y presentando productos sustitutos relevantes a los clientes."
+                    ]
+                },
+                {
+                    category: "Desarrollo Web",
+                    icon: "💻",
+                    prompts: [
+                        "Lista [número] de prompts para un curso de desarrollo web adaptado para principiantes.",
+                        "Desarrolla un diagrama de flujo para probar el proceso de pago de las aplicaciones web.",
+                        "Desarrolla un diagrama de flujo para probar procesos de texto en el desarrollo web.",
+                        "Desarrolla un diagrama de flujo para probar la funcionalidad de búsqueda en aplicaciones web.",
+                        "Dame [número] ideas para incorporar principios SOLID en proyectos de desarrollo web.",
+                        "Describe [número] casos de uso para el aprendizaje automático en aplicaciones web.",
+                        "Describe [número] casos de uso para el aprendizaje automático en aplicaciones web.",
+                        "Actúa como un asistente de lluvia de ideas y sugiere [número] ideas para un desafío de codificación.",
+                        "¿Puedes proporcionarme un bloque de código único para componentes de interfaz de usuario?"
+                    ]
+                },
+                {
+                    category: "Ciencia de Datos",
+                    icon: "📊",
+                    prompts: [
+                        "Actúa como científico de datos y construye un modelo de aprendizaje automático para mí basado en [datos].",
+                        "¿Puedes ayudarme a entrenar un [nombre del modelo]? Por favor, proporciona el código Python.",
+                        "Crea un conjunto de datos de muestra para [propósito] con [número] filas y [número] columnas.",
+                        "Crea un conjunto de datos CSV con [número] filas y [número] columnas basado en estos [datos].",
+                        "Construye un modelo de aprendizaje automático que prediga [sujeto] basado en datos históricos.",
+                        "Dame las instrucciones para implementar un lenguaje de procesamiento natural (NLP).",
+                        "Dame las instrucciones para implementar un lenguaje de procesamiento natural (NLP).",
+                        "Necesito un conjunto de datos para análisis de sentimientos con [número] filas y [número] columnas."
+                    ]
+                }
+            ];
+
+            // Generate accordion items
+            promptData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card overflow-hidden';
+
+                // Button
+                const button = document.createElement('button');
+                button.className = 'accordion-button w-full text-left p-4 flex justify-between items-center bg-white hover:bg-gray-50';
+                button.innerHTML = `
+                    <h3 class="text-xl font-semibold flex items-center">
+                        <span class="mr-3 text-2xl">${item.icon}</span>
+                        ${item.category}
+                    </h3>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                `;
+
+                // Content
+                const content = document.createElement('div');
+                content.className = 'accordion-content';
+                const list = document.createElement('ul');
+                list.className = 'list-disc list-inside space-y-3 text-gray-700';
+                item.prompts.forEach(promptText => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = promptText;
+                    list.appendChild(listItem);
+                });
+                content.appendChild(list);
+
+                card.appendChild(button);
+                card.appendChild(content);
+                accordionContainer.appendChild(card);
+
+                // Accordion logic
+                button.addEventListener('click', () => {
+                    const isOpen = content.classList.contains('open');
+                    
+                    // Close all other accordions
+                    document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+                        if (openContent !== content) {
+                            openContent.classList.remove('open');
+                            openContent.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle current accordion
+                    content.classList.toggle('open');
+                    button.querySelector('svg').classList.toggle('rotate-180');
+                });
+            });
+
+            // Open the first accordion by default
+            if (accordionContainer.children.length > 0) {
+                const firstButton = accordionContainer.children[0].querySelector('.accordion-button');
+                const firstContent = accordionContainer.children[0].querySelector('.accordion-content');
+                const firstSvg = firstButton.querySelector('svg');
+                
+                firstContent.classList.add('open');
+                firstSvg.classList.add('rotate-180');
+            }
+        });
+    </script>
+</body>
+</html>
